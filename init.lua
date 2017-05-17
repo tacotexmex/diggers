@@ -3,15 +3,15 @@ minetest.register_on_joinplayer(function(player)
 	minetest.after(0, player.hud_set_hotbar_image, player, "gui_hotbar_16.png")
 end)
 
-if minetest.get_modpath("default") ~= nil then 
+if minetest.get_modpath("beds") ~= nil then 
   minetest.unregister_item("beds:fancy_bed") 
-
-  minetest.clear_craft({ output = "beds:bed" })
+  minetest.clear_craft({ output = "beds:bed_bottom" })
   minetest.register_craft({
   	output = "beds:bed",
   	recipe = {
   		{"wool:green", "wool:green", "wool:white"},
   		{"group:wood", "group:wood", "group:wood"},
+    },
   })
 end
 
