@@ -27,3 +27,17 @@ if minetest.get_modpath("anvil") ~= nil then
       {"default:steel_ingot","default:steel_ingot","default:steel_ingot"} },
   })
 end
+
+minetest.override_item("default:glass", {
+  drawtype = "glasslike_framed",
+  tiles = {"default_glass.png", "default_glass_detail.png^default_glass.png"},
+ 	inventory_image = minetest.inventorycube("default_glass.png"),
+  use_texture_alpha = true,
+})
+
+minetest.override_item("default:obsidian_glass", {
+  drawtype = "glasslike_framed",
+  tiles = {"default_obsidian_glass.png", "default_obsidian_glass_detail.png^default_obsidian_glass.png"},
+ 	inventory_image = minetest.inventorycube("default_obsidian_glass.png"),
+  use_texture_alpha = true,
+})
