@@ -3,8 +3,8 @@ minetest.register_on_joinplayer(function(player)
 	minetest.after(0, player.hud_set_hotbar_image, player, "gui_hotbar_16.png")
 end)
 
-if minetest.get_modpath("beds") ~= nil then 
-  minetest.unregister_item("beds:fancy_bed") 
+if minetest.get_modpath("beds") ~= nil then
+  minetest.unregister_item("beds:fancy_bed")
   minetest.clear_craft({ output = "beds:bed_bottom" })
   minetest.register_craft({
   	output = "beds:bed",
@@ -17,7 +17,7 @@ end
 
 if minetest.get_modpath("herbs") ~= nil then minetest.unregister_item("herbs:cactus_tincture") end
 
-if minetest.get_modpath("anvil") ~= nil then 
+if minetest.get_modpath("anvil") ~= nil then
   minetest.clear_craft({ output = "anvil:anvil" })
   minetest.register_craft({
   	output = "anvil:anvil",
@@ -26,6 +26,7 @@ if minetest.get_modpath("anvil") ~= nil then
       {'',                   "default:steel_ingot",''                   },
       {"default:steel_ingot","default:steel_ingot","default:steel_ingot"} },
   })
+	anvil.setting.item_displacement = 14/16
 end
 
 minetest.override_item("default:glass", {
